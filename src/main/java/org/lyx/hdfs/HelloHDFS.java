@@ -80,7 +80,7 @@ public class HelloHDFS {
 	}
 
 	private static void uploadMultifile2OneFile(Configuration conf) throws IOException{
-		Path path = new Path("/lyx/seq.data");
+		Path path = new Path("/lyx/seq.dat");
 
 		SequenceFile.Writer.Option pathOption = SequenceFile.Writer.file(path);
 		SequenceFile.Writer.Option keyOption = SequenceFile.Writer.keyClass(Text.class);
@@ -95,7 +95,7 @@ public class HelloHDFS {
 	}
 
 	private static void downloadMultifile(Configuration conf) throws IOException{
-		Path path = new Path("/lyx/seq.data");
+		Path path = new Path("/lyx/seq.dat");
 		SequenceFile.Reader.Option pathOption = SequenceFile.Reader.file(path);
 		//放入到writer中的key为文件名称，value为文件的内容
 		SequenceFile.Reader reader = new SequenceFile.Reader(conf,pathOption);
